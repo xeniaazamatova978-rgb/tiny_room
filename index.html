@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Практическая работа: учебная экосистема</title>
+  <style>
+    :root{
+      --bg:#f4f7fc; --card:#ffffff; --text:#18212f; --muted:#5f6b7a; --line:#dde6f0;
+      --primary:#2457d6; --primary2:#4f86ff; --soft:#ecf3ff; --green:#0f766e;
+      --shadow:0 14px 36px rgba(24,33,47,.10); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif; color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(79,134,255,.18), transparent 30%),
+        radial-gradient(circle at left center, rgba(36,87,214,.10), transparent 28%),
+        linear-gradient(180deg,#f7faff 0%, #f2f5fb 100%);
+      line-height:1.58;
+    }
+    .wrap{max-width:1120px; margin:0 auto; padding:28px 18px 56px;}
+    .hero{
+      background:linear-gradient(135deg,#1f4ec9 0%, #3a76ff 100%);
+      color:#fff; border-radius:30px; padding:30px 28px; box-shadow:var(--shadow);
+      position:relative; overflow:hidden;
+    }
+    .hero:before{
+      content:""; position:absolute; right:-80px; bottom:-80px; width:240px; height:240px;
+      border-radius:50%; background:rgba(255,255,255,.10);
+    }
+    .hero:after{
+      content:""; position:absolute; right:18%; top:18px; width:120px; height:120px;
+      border-radius:50%; background:rgba(255,255,255,.08);
+    }
+    .eyebrow{
+      display:inline-block; padding:7px 12px; border-radius:999px;
+      background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18);
+      font-size:13px; font-weight:700; letter-spacing:.02em; margin-bottom:14px;
+    }
+    h1{margin:0; font-size:clamp(30px,4vw,46px); line-height:1.08;}
+    .hero p{margin:14px 0 0; max-width:780px; font-size:17px; opacity:.98;}
+    .section{
+      margin-top:18px; background:var(--card); border-radius:var(--radius);
+      box-shadow:var(--shadow); border:1px solid #edf2f8; padding:24px 22px;
+    }
+    .section h2{margin:0 0 10px; font-size:26px; line-height:1.15;}
+    .lead{margin:0 0 14px; color:var(--muted); font-size:16px;}
+    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+    .card{
+      border:1px solid var(--line); border-radius:20px; padding:18px 18px 16px; background:#fff;
+    }
+    .card h3{margin:0 0 8px; font-size:20px;}
+    .card p{margin:0 0 14px; color:var(--muted);}
+    .pill{
+      display:inline-block; background:#eef4ff; color:#2457d6; padding:6px 10px;
+      border-radius:999px; font-size:13px; font-weight:700; margin-bottom:10px;
+    }
+    .btns{display:flex; gap:10px; flex-wrap:wrap;}
+    .btn{
+      text-decoration:none; display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 16px; border-radius:14px; font-weight:700; transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn.primary{background:linear-gradient(135deg,#2457d6 0%, #4f86ff 100%); color:#fff; box-shadow:0 10px 24px rgba(36,87,214,.20);}
+    .btn.secondary{background:#fff; color:var(--primary); border-color:#cfddfb;}
+    .btn:hover{transform:translateY(-1px);}
+    .steps{display:grid; gap:12px;}
+    .step{
+      display:grid; grid-template-columns:52px 1fr; gap:14px; align-items:flex-start;
+      border:1px solid var(--line); border-radius:18px; padding:14px;
+    }
+    .num{
+      width:52px; height:52px; border-radius:16px; background:var(--soft); color:var(--primary);
+      display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800;
+    }
+    .note{
+      border-radius:18px; padding:16px 18px; border:1px solid #d6ebdf; background:#f1fcf6;
+    }
+    .note strong{color:var(--green);}
+    .footer{margin-top:18px; text-align:center; color:var(--muted); font-size:14px;}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Практическая работа</div>
+      <h1>Аудит рабочего пространства и проект его улучшения</h1>
+      <p>Перед вами учебная мини-система, которая поможет пройти путь от анализа рабочего места до оформления собственного цифрового отчёта. Работайте последовательно: сначала изучите задание, затем заполните чек-лист, после этого подготовьте отчёт в шаблоне.</p>
+    </section>
+
+    <section class="section">
+      <h2>Маршрут работы</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Откройте инструкцию</h3><p class="lead">Посмотрите, как редактировать HTML-файлы, какие редакторы использовать и как безопасно применять ИИ как помощника.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Пройдите интерактивный чек-лист</h3><p class="lead">Оцените рабочее место по шкале 0–1–2, получите итоговый балл и зафиксируйте сильные стороны, проблемы и улучшения.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Соберите отчёт</h3><p class="lead">Откройте шаблон отчёта, перенесите результаты анализа, добавьте визуальные материалы и оформите итоговую работу.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Подготовьте проект улучшения пространства</h3><p class="lead">Выберите аудиторию, рабочую зону или организацию, спроектируйте закупку оборудования, эргономику, зону отдыха и элементы ИТ-инфраструктуры.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Основные страницы</h2>
+      <p class="lead">Все страницы связаны между собой и оформлены в едином стиле.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="pill">Инструкция</span>
+          <h3>Как работать с HTML и ИИ</h3>
+          <p>Пошаговое объяснение для редактирования файлов, выбора текстового редактора, безопасной работы с кодом и использования промптов.</p>
+          <div class="btns">
+            <a class="btn primary" href="student_html_guide.html">Открыть инструкцию</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Чек-лист</span>
+          <h3>Интерактивная оценка рабочего места</h3>
+          <p>Автоматический подсчёт баллов, интерпретация результата, поля для сильных сторон, проблемных зон и предложений по улучшению.</p>
+          <div class="btns">
+            <a class="btn primary" href="student_checklist_interactive.html">Открыть чек-лист</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Шаблон</span>
+          <h3>HTML-шаблон отчёта</h3>
+          <p>Готовая структура для финальной работы: описание объекта анализа, результаты чек-листа, выводы, фото и проект улучшения.</p>
+          <div class="btns">
+            <a class="btn primary" href="student_report_template.html">Открыть шаблон отчёта</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Проект</span>
+          <h3>Закупка оборудования и организация пространства</h3>
+          <p>Полное проектное задание: выбор аудитории или организации, команда, фотофиксация, смета, эргономика, серверный узел, зона отдыха и AI-визуализации.</p>
+          <div class="btns">
+            <a class="btn primary" href="student_infrastructure_project.html">Открыть проектное задание</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Задача</span>
+          <h3>Что должно получиться</h3>
+          <p>На выходе у вас будет осмысленный аудит рабочего пространства, собственная цифровая страница и проект улучшения, который можно защитить и опубликовать.</p>
+          <div class="btns">
+            <a class="btn secondary" href="student_checklist_interactive.html#result">Перейти к итоговому блоку</a>
+          </div>
+        </div>
+      
+        <div class="card">
+          <span class="pill">Публикация</span>
+          <h3>Как создать репозиторий и выложить сайт</h3>
+          <p>Отдельная инструкция по GitHub Pages: как создать репозиторий, загрузить HTML-файлы и получить публичную ссылку на свой сайт бесплатно.</p>
+          <div class="btns">
+            <a class="btn primary" href="student_publish_site_guide.html">Открыть инструкцию по публикации</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Что важно в этой работе</h2>
+      <div class="note"><strong>Ключевая идея:</strong> важно не просто перечислить недостатки рабочего места, а показать, как технические, эргономические и организационные решения влияют на удобство, эффективность и рациональность использования пространства.</div>
+    </section>
+
+    <div class="footer">Работайте последовательно: инструкция → чек-лист → отчёт → проект → публикация.</div>
+  </div>
+</body>
+</html>
